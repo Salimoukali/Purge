@@ -1,0 +1,199 @@
+++ echo 'initPurges [INFO] : 0. Debut programme purges.sh'
+initPurges [INFO] : 0. Debut programme purges.sh
+++ '[' 0 -eq 0 ']'
+++ echo 'initPurges [INFO] : Aucun nom de fichier de configuration passe en paramètre'
+initPurges [INFO] : Aucun nom de fichier de configuration passe en paramètre
+++ echo 'initPurges [INFO] : FIC_PARAM=/home/centos/purge/cfg/purges.cfg (Valeur par defaut)'
+initPurges [INFO] : FIC_PARAM=/home/centos/purge/cfg/purges.cfg (Valeur par defaut)
+++ FIC_PARAM=/home/centos/purge/cfg/purges.cfg
+++ mkdir -p /home/centos/purge/wrk
+++ mkdir -p /home/centos/purge/log
+++ mkdir -p /home/centos/purge/tmp
+++ test -s /home/centos/purge/cfg/purges.cfg
+++ touch /home/centos/purge/wrk/purges_202201101642.lst
+++ echo 'initPurges [INFO] : ####################################'
+initPurges [INFO] : ####################################
+++ echo 'initPurges [INFO] : 1. Detail des variables du programme'
+initPurges [INFO] : 1. Detail des variables du programme
+++ echo 'initPurges [INFO] : ####################################'
+initPurges [INFO] : ####################################
+++ echo 'initPurges [INFO] :'
+initPurges [INFO] :
+++ echo 'initPurges [INFO] : HORODATAGE = 202201101642'
+initPurges [INFO] : HORODATAGE = 202201101642
+++ echo 'initPurges [INFO] : DIR_HOME   = /home/centos/purge'
+initPurges [INFO] : DIR_HOME   = /home/centos/purge
+++ echo 'initPurges [INFO] : DIR_SHL    = /home/centos/purge/shl'
+initPurges [INFO] : DIR_SHL    = /home/centos/purge/shl
+++ echo 'initPurges [INFO] : DIR_WRK    = /home/centos/purge/wrk'
+initPurges [INFO] : DIR_WRK    = /home/centos/purge/wrk
+++ echo 'initPurges [INFO] : DIR_LOG    = /home/centos/purge/log'
+initPurges [INFO] : DIR_LOG    = /home/centos/purge/log
+++ echo 'initPurges [INFO] : DIR_TMP    = /home/centos/purge/tmp'
+initPurges [INFO] : DIR_TMP    = /home/centos/purge/tmp
+++ echo 'initPurges [INFO] : DIR_CFG    = /home/centos/purge/cfg'
+initPurges [INFO] : DIR_CFG    = /home/centos/purge/cfg
+++ echo 'initPurges [INFO] : LIST_FIC   = /home/centos/purge/wrk/purges_202201101642.lst'
+initPurges [INFO] : LIST_FIC   = /home/centos/purge/wrk/purges_202201101642.lst
+++ echo 'initPurges [INFO] :'
+initPurges [INFO] :
+++ echo 'initPurges [INFO] :'
+initPurges [INFO] :
+++ echo 'initPurges [INFO] : Fin de initPurges'
+initPurges [INFO] : Fin de initPurges
++ read ligne
++ echo '$DIR_WRK;*.lst;90'
++ grep -E '^$'
++ echo '$DIR_WRK;*.lst;90'
++ grep -E '^#'
++++ cut '-d;' -f1
++++ echo '$DIR_WRK;*.lst;90'
+++ eval echo '$DIR_WRK'
++++ echo /home/centos/purge/wrk
++ REP=/home/centos/purge/wrk
+++ echo '$DIR_WRK;*.lst;90'
+++ cut '-d;' -f2
++ FIC_PATTERN='*.lst'
+++ echo '$DIR_WRK;*.lst;90'
+++ cut '-d;' -f3
++ RETENTION=90
+++ echo '$DIR_WRK;*.lst;90'
+++ cut '-d;' -f4
++ PROFONDEUR=
++ '[' x = x ']'
++ PROFONDEUR=1
++ test '!' -d /home/centos/purge/wrk -o -z /home/centos/purge/wrk
++ echo '[INFO] Purge de REP=/home/centos/purge/wrk FIC_PATTERN=*.lst RETENTION=90 PROFONDEUR=1'
+[INFO] Purge de REP=/home/centos/purge/wrk FIC_PATTERN=*.lst RETENTION=90 PROFONDEUR=1
++ find /home/centos/purge/wrk -name '*.lst' -mtime +90 -maxdepth 1 -exec ls -1td '{}' +
++ read findLine
++ read ligne
++ echo '$DIR_LOG;*.log;90'
++ grep -E '^$'
++ echo '$DIR_LOG;*.log;90'
++ grep -E '^#'
++++ cut '-d;' -f1
++++ echo '$DIR_LOG;*.log;90'
+++ eval echo '$DIR_LOG'
++++ echo /home/centos/purge/log
++ REP=/home/centos/purge/log
+++ echo '$DIR_LOG;*.log;90'
+++ cut '-d;' -f2
++ FIC_PATTERN='*.log'
+++ echo '$DIR_LOG;*.log;90'
+++ cut '-d;' -f3
++ RETENTION=90
+++ echo '$DIR_LOG;*.log;90'
+++ cut '-d;' -f4
++ PROFONDEUR=
++ '[' x = x ']'
++ PROFONDEUR=1
++ test '!' -d /home/centos/purge/log -o -z /home/centos/purge/log
++ echo '[INFO] Purge de REP=/home/centos/purge/log FIC_PATTERN=*.log RETENTION=90 PROFONDEUR=1'
+[INFO] Purge de REP=/home/centos/purge/log FIC_PATTERN=*.log RETENTION=90 PROFONDEUR=1
++ find /home/centos/purge/log -name '*.log' -mtime +90 -maxdepth 1 -exec ls -1td '{}' +
++ read findLine
++ read ligne
++ echo '$HOME/.ansible/composants;*.tar.gz;2'
++ grep -E '^$'
++ echo '$HOME/.ansible/composants;*.tar.gz;2'
++ grep -E '^#'
++++ echo '$HOME/.ansible/composants;*.tar.gz;2'
++++ cut '-d;' -f1
+++ eval echo '$HOME/.ansible/composants'
++++ echo /home/centos/.ansible/composants
++ REP=/home/centos/.ansible/composants
+++ echo '$HOME/.ansible/composants;*.tar.gz;2'
+++ cut '-d;' -f2
++ FIC_PATTERN='*.tar.gz'
+++ echo '$HOME/.ansible/composants;*.tar.gz;2'
+++ cut '-d;' -f3
++ RETENTION=2
+++ echo '$HOME/.ansible/composants;*.tar.gz;2'
+++ cut '-d;' -f4
++ PROFONDEUR=
++ '[' x = x ']'
++ PROFONDEUR=1
++ test '!' -d /home/centos/.ansible/composants -o -z /home/centos/.ansible/composants
++ echo '[WARNING] /home/centos/.ansible/composants n'\''existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg'
+[WARNING] /home/centos/.ansible/composants n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
++ continue
++ read ligne
++ grep -E '^$'
++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
++ grep -E '^#'
++++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
++++ cut '-d;' -f1
+++ eval echo '$HOME/DATA/ANSIBLE/LOG/'
++++ echo /home/centos/DATA/ANSIBLE/LOG/
++ REP=/home/centos/DATA/ANSIBLE/LOG/
+++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
+++ cut '-d;' -f2
++ FIC_PATTERN='*.log'
+++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
+++ cut '-d;' -f3
++ RETENTION=10
+++ echo '$HOME/DATA/ANSIBLE/LOG/;*.log;10;2'
+++ cut '-d;' -f4
++ PROFONDEUR=2
++ '[' x2 = x ']'
++ test '!' -d /home/centos/DATA/ANSIBLE/LOG/ -o -z /home/centos/DATA/ANSIBLE/LOG/
++ echo '[WARNING] /home/centos/DATA/ANSIBLE/LOG/ n'\''existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg'
+[WARNING] /home/centos/DATA/ANSIBLE/LOG/ n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
++ continue
++ read ligne
++ grep -E '^$'
++ echo '$HOME/tools/genarbo/log/;*.log;7'
++ echo '$HOME/tools/genarbo/log/;*.log;7'
++ grep -E '^#'
++++ cut '-d;' -f1
++++ echo '$HOME/tools/genarbo/log/;*.log;7'
+++ eval echo '$HOME/tools/genarbo/log/'
++++ echo /home/centos/tools/genarbo/log/
++ REP=/home/centos/tools/genarbo/log/
+++ cut '-d;' -f2
+++ echo '$HOME/tools/genarbo/log/;*.log;7'
++ FIC_PATTERN='*.log'
+++ echo '$HOME/tools/genarbo/log/;*.log;7'
+++ cut '-d;' -f3
++ RETENTION=7
+++ echo '$HOME/tools/genarbo/log/;*.log;7'
+++ cut '-d;' -f4
++ PROFONDEUR=
++ '[' x = x ']'
++ PROFONDEUR=1
++ test '!' -d /home/centos/tools/genarbo/log/ -o -z /home/centos/tools/genarbo/log/
++ echo '[WARNING] /home/centos/tools/genarbo/log/ n'\''existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg'
+[WARNING] /home/centos/tools/genarbo/log/ n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
++ continue
++ read ligne
++ grep -E '^$'
++ echo '/var/log/grafana/;*.log;10'
++ echo '/var/log/grafana/;*.log;10'
++ grep -E '^#'
++++ echo '/var/log/grafana/;*.log;10'
++++ cut '-d;' -f1
+++ eval echo /var/log/grafana/
++++ echo /var/log/grafana/
++ REP=/var/log/grafana/
+++ echo '/var/log/grafana/;*.log;10'
+++ cut '-d;' -f2
++ FIC_PATTERN='*.log'
+++ echo '/var/log/grafana/;*.log;10'
+++ cut '-d;' -f3
++ RETENTION=10
+++ echo '/var/log/grafana/;*.log;10'
+++ cut '-d;' -f4
++ PROFONDEUR=
++ '[' x = x ']'
++ PROFONDEUR=1
++ test '!' -d /var/log/grafana/ -o -z /var/log/grafana/
++ echo '[INFO] Purge de REP=/var/log/grafana/ FIC_PATTERN=*.log RETENTION=10 PROFONDEUR=1'
+[INFO] Purge de REP=/var/log/grafana/ FIC_PATTERN=*.log RETENTION=10 PROFONDEUR=1
++ read findLine
++ find /var/log/grafana/ -name '*.log' -mtime +10 -maxdepth 1 -exec ls -1td '{}' +
++ read ligne
++ echo 'Compte rendu des fichiers purgés : cat /home/centos/purge/wrk/purges_202201101642.lst '
+Compte rendu des fichiers purgés : cat /home/centos/purge/wrk/purges_202201101642.lst 
++ cat /home/centos/purge/wrk/purges_202201101642.lst

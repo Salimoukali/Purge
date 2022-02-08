@@ -41,10 +41,12 @@ while read ligne ; do
         taille=$(wc -c $findLine | awk '{print $1}')
         # On supprime le fichier
         echo "Fichier a supprimer : $findLine"
-	#if  rm -f $findLine
+	if  rm -f $findLine
         #then   printf  "%-150s%15d%10s\n" $findLine $taille SUPPRIME >> $LIST_FIC
+        then   echo "$findLine $taille SUPPRIME" >> $LIST_FIC
         #else   printf  "%-150s%15d%10s\n" $findLine $taille ERROR >> $LIST_FIC
-        #fi
+        else   echo "$findLine $taille ERROR" >> $LIST_FIC
+        fi
     done
 done < "$FIC_PARAM"
 echo "Compte rendu des fichiers purgés : cat $LIST_FIC "

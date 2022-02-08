@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #HORODATAGE : Savoir la date et heure du lancement du programme
-HORODATAGE=$(date '+%Y%m%d%H%M')
+HORODATAGE=$(date '+%Y%m%d%H%M%S')
 #Variables de travail
 DIR_SHL="$PWD"
 DIR_HOME="${DIR_SHL%/*}"

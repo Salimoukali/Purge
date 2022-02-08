@@ -1,0 +1,25 @@
+initPurges [INFO] : 0. Debut programme ./purges.sh
+initPurges [INFO] : Aucun nom de fichier de configuration passe en paramètre
+initPurges [INFO] : FIC_PARAM=/home/centos/purge/cfg/purges.cfg (Valeur par defaut)
+initPurges [INFO] : ####################################
+initPurges [INFO] : 1. Detail des variables du programme
+initPurges [INFO] : ####################################
+initPurges [INFO] :
+initPurges [INFO] : HORODATAGE = 202201041652
+initPurges [INFO] : DIR_HOME   = /home/centos/purge
+initPurges [INFO] : DIR_SHL    = /home/centos/purge/shl
+initPurges [INFO] : DIR_WRK    = /home/centos/purge/wrk
+initPurges [INFO] : DIR_LOG    = /home/centos/purge/log
+initPurges [INFO] : DIR_TMP    = /home/centos/purge/tmp
+initPurges [INFO] : DIR_CFG    = /home/centos/purge/cfg
+initPurges [INFO] : LIST_FIC   = /home/centos/purge/wrk/purges_202201041652.lst
+initPurges [INFO] :
+initPurges [INFO] :
+initPurges [INFO] : Fin de initPurges
+[INFO] Purge de REP=/home/centos/purge/wrk FIC_PATTERN=*.lst RETENTION=90 PROFONDEUR=1
+[INFO] Purge de REP=/home/centos/purge/log FIC_PATTERN=*.log RETENTION=90 PROFONDEUR=1
+[WARNING] /home/centos/.ansible/composants n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
+[WARNING] /home/centos/DATA/ANSIBLE/LOG/ n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
+[WARNING] /home/centos/tools/genarbo/log/ n'existe pas. Merci de corriger /home/centos/purge/cfg/purges.cfg
+[INFO] Purge de REP=/var/log/grafana/ FIC_PATTERN=*.log RETENTION=10 PROFONDEUR=1
+Compte rendu des fichiers purgés : cat /home/centos/purge/wrk/purges_202201041652.lst 
